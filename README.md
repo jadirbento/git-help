@@ -58,7 +58,7 @@ $ git add [arquivo1] [arquivo2] ...
 $ git add .
 ```
 
-#### Commit (em 3 estágios)
+### Commit (em 3 estágios)
 ```sh
 $ git commit -m "[mensagem]"
 ```
@@ -211,11 +211,23 @@ Explo: quando o seu colega fala, acabei de fazer um push, pega aí as alteraçõ
 `$ git pull origin master`
 
 ##### Sincronizar tudo no repositorio remoto
-`$ git pull` ->cria todos os branch remotos no seu local.
+`$ git pull` ->cria todos os branch remotos.
 
 ##### Push com o novo branch
 `$ git push origin npme-do-novo-branch`
 
+##### Removendo branch remoto
+Quando um branch local é removido, isso não significa que o branch remoto também será. Nesse caso, há um comando específico para que possamos remover um branch remoto. Utilize o comando: `$ git push origin :nome-do-branch`
+
+##### Trabalhando com tags
+Rabalhar com tegs significa crara versões, RELEASE, do seu sistema.
+Nada mais é do que um apontamento para aquele determinado ponto do desenvolvimento.
+
+***Criar*** `$ git tag 0.1.0`
+
+***Listar*** `$ git tag -l`
+
+***Subir todas as tags*** `$ git push origin master --tags`
 
 
 
