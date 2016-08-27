@@ -160,10 +160,70 @@ $ git merge [nome-do-branch]
 
 ## GITHUB
 ##### Criando chave de autenticação
+
+1. ***Gerar*** a chave:
 `$ ssh-keygen`
 
+2. Para ***visualizar*** a chave criada, digite no terminal:
+`$ ~/.ssh/`
 
-x
+3. ***Listar***: `$ ls`
+github_rsa  github_rsa.pub  id_rsa  id_rsa.pub  known_hosts
+
+4. pegar o ***codigo***: `$ cat id_rsa.pub`
+
+5. ***NO GIT***, vá em settings/SSH and GPG keys, botão New SSH key. Dê um titulo descritivo para chave e cole o codigo no campo correspondente.
+
+
+##### Criando primeiro repositório
+***Dica:*** Crie um repositório totalmente ***limpo*** (não marque a opção: Initialize this repository with a README), sem nenhum arquivo, assim ele será criado sem nenhum Branch, deste modo no seu primeiro ***Push*** ele vai criar toda estrutura, caso contrario você terá que ***clonar*** o repositório.
+
+***Proximo passo, o propio git ajuda:***
+##### Fazendo o primeiro push
+````sh
+$ git init
+$ git add README.md
+$ git commit -m "first commit"
+$ git remote add origin git@github.com:jadirbento/teste.git
+$ git push -u origin master `
+````
+
+##### Push em outro branch
+O push acontece no branch atual, onde você está. Para subir um outro branch você precisa primeiro trocar de branch local.
+
+````sh
+$ git branch ->lista todos
+$ git checkout nomedobranch
+$ git push origin master nomedobranch (qualquer nome)
+````
+
+##### Clonando...
+1. entre no repositório e clique no botão "Clone or download".
+2. copie a url.
+3. no terminal `$ git clone git@github.com:jadirbento/git-help.git (cole a url)`.
+4. ***Dica*** se você der um espaço, deois da url, poderá dar um outro nome para o clone.
+***Caso tenha outros branch e você quer clonar tambem***
+`$ git branch -a ` -> ele vai listar os locais e os remotos.
+5. Criar `$ git checkout -b meubranch origin/meubranch` ->ele cria local com base no remoto.
+
+##### Pegar atualizações (PULL) no repositório remoto
+Explo: quando o seu colega fala, acabei de fazer um push, pega aí as alterações.
+`$ git pull origin master`
+
+##### Sincronizar tudo no repositorio remoto
+`$ git pull` ->cria todos os branch remotos no seu local.
+
+##### Push com o novo branch
+`$ git push origin npme-do-novo-branch`
+
+
+
+
+
+
+
+
+
 
 
 
